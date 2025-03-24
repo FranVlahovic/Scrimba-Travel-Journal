@@ -7,12 +7,14 @@
 
 :root {
 --header-color: #F55A5A;
+--anchor-color: #918E9B;
 --secondary-color: ;
 }
 
 body {
   max-width: 704px;
 }
+
 img {
 max-width: 100%;
 display: block;
@@ -36,4 +38,67 @@ header h1 {
   font-size: 0.9rem;
   font-weight: 500;
   color: white;
+}
+
+article.journal-entry {
+  display: flex;
+  padding: 3em 3em 0em 3em;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.location-maps {
+  display: flex;
+}
+
+article.journal-entry .marker {
+  width: 7px;
+  margin-right: 4px;
+}
+
+article .country, article a, p {
+  font-size: 0.7rem;
+}
+
+article .country {
+  letter-spacing: 0.2rem;
+}
+
+article a {
+  margin-left: 1rem;
+  color: var(--anchor-color);
+}
+
+article .entry-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.2em;
+}
+
+article .trip-dates {
+  font-weight: bold;
+}
+
+article .entry-text {
+  line-height: 1rem;
+}
+
+.main-image-container {
+  width: 125px;
+  height: 168px;
+  overflow: hidden;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.main-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+article .info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  max-width: 21rem;
 }
