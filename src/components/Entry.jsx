@@ -1,27 +1,30 @@
 import LocationPin from "../assets/images/marker.svg";
-import { countryList } from "./data.js";
 
-export default function Entry(){
-    return countryList.map(({ src, alt, country, link, title, date, text }, index) => (
-        <article className="journal-entry" id = {index} key={index}>
+export default function Entry(props) {
+    return (
+        <article className="journal-entry">
             <div className="main-image-container">
-                <img className="main-image" src = {src} alt = {alt} />
+                <img 
+                    className="main-image"
+                    src={props.img.src} 
+                    alt={props.img.alt}
+                />
             </div>
             <div className="info-container">
                 <div className="location-maps">
-                    <img className="marker" src={LocationPin} alt="location marker" />
-                    
-                    <span className="country">{country}</span>
-                    
-                    <a href={link}>View on Google Maps</a>
+                    <img 
+                        className="marker"
+                        src= {LocationPin} 
+                        alt="map marker icon"
+                    />
+                    <span className="country">{props.country}</span>
+                    <a href={props.googleMapsLink} target="_blank">View on Google Maps</a>
                 </div>
-
-                <h2 className="entry-title">{title}</h2>
-                
-                <p className="trip-dates">{date}</p>
-                
-                <p className="entry-text">{text}</p>
+                <h2 className="entry-title">{props.title}</h2>
+                <p className="trip-dates">{props.dates}</p>
+                <p className="entry-text">{props.text}</p>
             </div>
+            
         </article>
-    ));
+    )
 }
